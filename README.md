@@ -14,7 +14,7 @@ AI-assisted troubleshooting helper for Cisco Packet Tracer network labs, with ma
 1. Create virtual environment: `python -m venv venv`
 2. Activate it: `venv\Scripts\Activate.ps1` (Windows)
 3. Install dependencies: `pip install -r requirements.txt`
-4. Add your Anthropic API key to `.env`
+4. 4. Add your Gemini API key to `.env`
 
 ## Status
 Stage 1: Project skeleton — in progress
