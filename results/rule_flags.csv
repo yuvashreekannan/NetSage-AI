@@ -1,0 +1,8 @@
+case_id,rule,severity,message,evidence
+sample_test,duplicate_ip,High,Duplicate IP 192.168.1.10 found on both 'PC1' and 'PC2'.,PC1 and PC2 both use 192.168.1.10
+sample_test,wrong_subnet_mask,Medium,"Hosts intended for subnet 'LAN1' have inconsistent masks: ['255.255.0.0', '255.255.255.0'].","PC1, PC2, PC3, PC4 -> masks ['255.255.0.0', '255.255.255.0']"
+sample_test,gateway_mismatch,Medium,Host 'PC4' gateway 192.168.1.99 does not match any configured router interface IP.,"PC4 gateway=192.168.1.99, known router IPs=['192.168.1.1', '192.168.2.1']"
+sample_test,interface_down,High,Interface Fa0/1 on R1 is 'administratively down'.,R1 Fa0/1: administratively down
+sample_test,missing_vlan,High,"Port Fa0/5 on SW1 is assigned to VLAN 99, which does not exist in the VLAN database.",SW1 Fa0/5 -> VLAN 99
+sample_test,missing_vlan,Medium,VLAN 10 is not permitted on trunk Fa0/1 (SW1).,"Trunk SW1 Fa0/1 allowed=[1, 20, 30]"
+sample_test,missing_route,High,No route found for expected subnet 192.168.3.0/24.,routing table has ['192.168.2.0/24']

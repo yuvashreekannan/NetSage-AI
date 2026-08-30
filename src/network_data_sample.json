@@ -1,0 +1,31 @@
+{
+  "hosts": [
+    {"name": "PC1", "ip": "192.168.1.10", "mask": "255.255.255.0", "gateway": "192.168.1.1", "intended_subnet": "LAN1"},
+    {"name": "PC2", "ip": "192.168.1.10", "mask": "255.255.255.0", "gateway": "192.168.1.1", "intended_subnet": "LAN1"},
+    {"name": "PC3", "ip": "192.168.1.20", "mask": "255.255.0.0",   "gateway": "192.168.1.1", "intended_subnet": "LAN1"},
+    {"name": "PC4", "ip": "192.168.1.30", "mask": "255.255.255.0", "gateway": "192.168.1.99", "intended_subnet": "LAN1"}
+  ],
+  "router_interfaces": [
+    {"device": "R1", "name": "Fa0/0", "ip": "192.168.1.1", "mask": "255.255.255.0", "status": "up"},
+    {"device": "R1", "name": "Fa0/1", "ip": "192.168.2.1", "mask": "255.255.255.0", "status": "administratively down"}
+  ],
+  "switch_ports": [
+    {"device": "SW1", "name": "Fa0/2", "vlan": 10, "status": "up"},
+    {"device": "SW1", "name": "Fa0/5", "vlan": 99, "status": "up"}
+  ],
+  "vlans": [
+    {"id": 1,  "name": "default"},
+    {"id": 10, "name": "Sales"}
+  ],
+  "trunks": [
+    {"device": "SW1", "port": "Fa0/1", "allowed_vlans": [1, 20, 30]}
+  ],
+  "routes": [
+    {"device": "R1", "network": "192.168.2.0", "mask": "255.255.255.0"}
+  ],
+  "expected_subnets": [
+    "192.168.1.0/24",
+    "192.168.2.0/24",
+    "192.168.3.0/24"
+  ]
+}
